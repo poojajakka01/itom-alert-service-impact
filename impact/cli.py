@@ -9,7 +9,7 @@ from pathlib import Path
 from .engine import SEVERITY, bind_alerts, impacted_services, normalize_events
 
 SEV_NAME = {v: k for k, v in SEVERITY.items()}
-
+   log = logging.getLogger(__name__)
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Correlate monitoring events to CIs and impacted services")
@@ -22,7 +22,7 @@ def main(argv=None) -> int:
         events = json.loads(args.events.read_text())
         cmdb = json.loads(args.cmdb.read_text())
     except (OSError, json.JSONDecodeError) as exc:
-        logging.error("Cannot read input: %s", exc)
+        log.error("Cannot read input: %s", exc)
         return 2
 
     alerts = bind_alerts(normalize_events(events), cmdb["cis"])
