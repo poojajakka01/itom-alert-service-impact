@@ -1,0 +1,55 @@
+[
+  {
+    "source": "demo-monitor",
+    "node": "demo-db-01",
+    "metric": "disk_used_pct",
+    "severity": "minor"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "demo-db-01",
+    "metric": "disk_used_pct",
+    "severity": "major"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "demo-db-01",
+    "metric": "disk_used_pct",
+    "severity": "critical"
+  },
+  {
+    "source": "demo-apm",
+    "node": "demo-app-01.example.test",
+    "metric": "p95_latency",
+    "severity": "major"
+  },
+  {
+    "source": "demo-net",
+    "node": "198.51.100.5",
+    "metric": "pool_member_down",
+    "severity": "warning"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "demo-app-02",
+    "metric": "cpu",
+    "severity": "major"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "demo-app-02",
+    "metric": "cpu",
+    "severity": "clear"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "legacy-host-99",
+    "metric": "ping",
+    "severity": "critical"
+  },
+  {
+    "source": "demo-monitor",
+    "node": "demo-app-02",
+    "metric": "memory"
+  }
+]

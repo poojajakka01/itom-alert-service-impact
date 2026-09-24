@@ -1,0 +1,108 @@
+{
+  "cis": [
+    {
+      "sys_id": "bs_pay",
+      "name": "Online Payments",
+      "sys_class_name": "cmdb_ci_service_business",
+      "busines_criticality": "1 - most critical"
+    },
+    {
+      "sys_id": "bs_hr",
+      "name": "Employee Portal",
+      "sys_class_name": "cmdb_ci_service_business",
+      "busines_criticality": "3 - less critical"
+    },
+    {
+      "sys_id": "as_pay",
+      "name": "Payments API (prod)",
+      "sys_class_name": "cmdb_ci_service_auto"
+    },
+    {
+      "sys_id": "as_hr",
+      "name": "HR Portal (prod)",
+      "sys_class_name": "cmdb_ci_service_auto"
+    },
+    {
+      "sys_id": "app_pay",
+      "name": "payments-api",
+      "sys_class_name": "cmdb_ci_appl"
+    },
+    {
+      "sys_id": "app_hr",
+      "name": "hr-portal-web",
+      "sys_class_name": "cmdb_ci_appl"
+    },
+    {
+      "sys_id": "db_pay",
+      "name": "demo-pg-01",
+      "sys_class_name": "cmdb_ci_db_instance"
+    },
+    {
+      "sys_id": "lb1",
+      "name": "demo-lb-01",
+      "ip_address": "198.51.100.5",
+      "sys_class_name": "cmdb_ci_lb"
+    },
+    {
+      "sys_id": "srv1",
+      "name": "demo-app-01",
+      "fqdn": "demo-app-01.example.test",
+      "ip_address": "192.0.2.21",
+      "sys_class_name": "cmdb_ci_linux_server"
+    },
+    {
+      "sys_id": "srv2",
+      "name": "demo-app-02",
+      "ip_address": "192.0.2.22",
+      "sys_class_name": "cmdb_ci_linux_server"
+    },
+    {
+      "sys_id": "srv3",
+      "name": "demo-db-01",
+      "ip_address": "192.0.2.31",
+      "sys_class_name": "cmdb_ci_linux_server"
+    }
+  ],
+  "rels": [
+    {
+      "parent": "bs_pay",
+      "child": "as_pay"
+    },
+    {
+      "parent": "bs_hr",
+      "child": "as_hr"
+    },
+    {
+      "parent": "as_pay",
+      "child": "app_pay"
+    },
+    {
+      "parent": "as_hr",
+      "child": "app_hr"
+    },
+    {
+      "parent": "as_pay",
+      "child": "lb1"
+    },
+    {
+      "parent": "as_hr",
+      "child": "lb1"
+    },
+    {
+      "parent": "app_pay",
+      "child": "srv1"
+    },
+    {
+      "parent": "app_pay",
+      "child": "db_pay"
+    },
+    {
+      "parent": "app_hr",
+      "child": "srv2"
+    },
+    {
+      "parent": "db_pay",
+      "child": "srv3"
+    }
+  ]
+}

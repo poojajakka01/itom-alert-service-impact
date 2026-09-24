@@ -1,0 +1,14 @@
+WARNING Dropping malformed event {'source': 'demo-monitor', 'node': 'demo-app-02', 'metric': 'memory'}: 'severity'
+Events: 9  ->  open alerts: 4  (unbound: 1)
+
+ALERTS
+  [critical] demo-monitor|demo-db-01|disk_used_pct         x3   -> srv3 (name)
+  [critical] demo-monitor|legacy-host-99|ping              x1   -> - (unbound)
+  [major   ] demo-apm|demo-app-01.example.test|p95_latency x1   -> srv1 (name)
+  [warning ] demo-net|198.51.100.5|pool_member_down        x1   -> lb1 (ip_address)
+
+IMPACTED SERVICES (ranked)
+  [critical] crit=1 Online Payments           via demo-db-01 > demo-pg-01 > payments-api > Payments API (prod) > Online Payments
+  [critical] crit=4 Payments API (prod)       via demo-db-01 > demo-pg-01 > payments-api > Payments API (prod)
+  [warning ] crit=3 Employee Portal           via demo-lb-01 > HR Portal (prod) > Employee Portal
+  [warning ] crit=4 HR Portal (prod)          via demo-lb-01 > HR Portal (prod)
