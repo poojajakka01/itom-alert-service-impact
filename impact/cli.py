@@ -9,7 +9,7 @@ from pathlib import Path
 from .engine import SEVERITY, bind_alerts, impacted_services, normalize_events
 
 SEV_NAME = {v: k for k, v in SEVERITY.items()}
-   log = logging.getLogger(__name__)
+log = logging.getLogger(__name__)
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Correlate monitoring events to CIs and impacted services")
